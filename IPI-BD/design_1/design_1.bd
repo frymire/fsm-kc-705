@@ -1,0 +1,297 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xE470413E31CA6151",
+      "device": "xc7k325tffg900-2",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "clk_wiz": "",
+      "button_concat": "",
+      "cheat_code": ""
+    },
+    "interface_ports": {
+      "sys_diff_clock": {
+        "mode": "Slave",
+        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "200000000"
+          }
+        }
+      }
+    },
+    "ports": {
+      "reset": {
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "",
+            "value_src": "weak"
+          }
+        }
+      },
+      "button_north": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PortType": {
+            "value": "data",
+            "value_src": "default"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
+      },
+      "button_south": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PortType": {
+            "value": "data",
+            "value_src": "default"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
+      },
+      "button_east": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PortType": {
+            "value": "data",
+            "value_src": "default"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
+      },
+      "button_west": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PortType": {
+            "value": "data",
+            "value_src": "default"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
+      },
+      "button_center": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PortType": {
+            "value": "data",
+            "value_src": "default"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
+      },
+      "leds": {
+        "type": "data",
+        "direction": "O",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "clk_wiz": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "design_1_clk_wiz_0_0",
+        "parameters": {
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_diff_clock"
+          },
+          "CLK_OUT1_PORT": {
+            "value": "clk_100"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "button_concat": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "design_1_xlconcat_0_0",
+        "parameters": {
+          "NUM_PORTS": {
+            "value": "5"
+          }
+        }
+      },
+      "cheat_code": {
+        "vlnv": "xilinx.com:module_ref:cheat_code:1.0",
+        "xci_name": "design_1_cheat_code_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "cheat_code",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_wiz_0_0_clk_100",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "buttons_NSEWC": {
+            "direction": "I",
+            "left": "4",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "5",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "leds": {
+            "direction": "O",
+            "left": "7",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "",
+                "value_src": "weak"
+              }
+            }
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "sys_diff_clock_1": {
+        "interface_ports": [
+          "sys_diff_clock",
+          "clk_wiz/CLK_IN1_D"
+        ]
+      }
+    },
+    "nets": {
+      "reset_1": {
+        "ports": [
+          "reset",
+          "clk_wiz/reset"
+        ]
+      },
+      "clk_wiz_clk_100": {
+        "ports": [
+          "clk_wiz/clk_100",
+          "cheat_code/clk"
+        ]
+      },
+      "button_concat_dout": {
+        "ports": [
+          "button_concat/dout",
+          "cheat_code/buttons_NSEWC"
+        ]
+      },
+      "cheat_code_leds": {
+        "ports": [
+          "cheat_code/leds",
+          "leds"
+        ]
+      },
+      "clk_wiz_locked": {
+        "ports": [
+          "clk_wiz/locked",
+          "cheat_code/reset_n"
+        ]
+      },
+      "button_north_1": {
+        "ports": [
+          "button_north",
+          "button_concat/In4"
+        ]
+      },
+      "button_south_1": {
+        "ports": [
+          "button_south",
+          "button_concat/In3"
+        ]
+      },
+      "button_east_1": {
+        "ports": [
+          "button_east",
+          "button_concat/In2"
+        ]
+      },
+      "button_west_1": {
+        "ports": [
+          "button_west",
+          "button_concat/In1"
+        ]
+      },
+      "button_center_1": {
+        "ports": [
+          "button_center",
+          "button_concat/In0"
+        ]
+      }
+    }
+  }
+}
