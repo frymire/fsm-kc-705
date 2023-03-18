@@ -6,9 +6,9 @@
 # Configuration Bank Voltage Selection (CFGBVS), specified as VCCO (as in this case) or GND.
 
 # Clock ...
-#set_property DIFF_TERM FALSE [get_ports sys_diff_clock_200_clk_n]
-#set_property DIFF_TERM FALSE [get_ports sys_diff_clock_200_clk_p]
-#set_property IOSTANDARD DIFF_SSTL15 [get_ports sys_diff_clock_200_clk_p]
+set_property DIFF_TERM FALSE [get_ports sys_diff_clock_200_clk_n]
+set_property DIFF_TERM FALSE [get_ports sys_diff_clock_200_clk_p]
+set_property IOSTANDARD DIFF_SSTL15 [get_ports sys_diff_clock_200_clk_p]
 
 # Buttons...
 set_property PACKAGE_PIN AA12 [get_ports button_north]
